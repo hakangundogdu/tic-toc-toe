@@ -119,6 +119,10 @@ const App = () => {
   const [winner, setWinner] = useState(null);
 
   const handleClick = (i) => {
+    if (squares[i]) {
+      return;
+    }
+
     if (!winner) {
       let updatedSquares = [...squares];
       updatedSquares[i] = playerX ? 'X' : 'O';
